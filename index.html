@@ -327,6 +327,43 @@
         }
 
         /* ==========================================================================
+           Artigos e Publicações
+           ========================================================================== */
+        .publication-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .publication-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pub-meta {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-desc {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .pub-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
            Contato
            ========================================================================== */
         .contact-content {
@@ -503,6 +540,7 @@
                 <li><a href="#experiencia" class="nav-link">Experiência</a></li>
                 <li><a href="#competencias" class="nav-link">Competências</a></li>
                 <li><a href="#formacao" class="nav-link">Formação</a></li>
+                <li><a href="#artigos" class="nav-link">Artigos</a></li>
                 <li><a href="#contato" class="nav-link">Contacto</a></li>
             </ul>
         </div>
@@ -637,7 +675,7 @@
                 <h2 class="section-title">Formação Académica</h2>
                 
                 <div class="education-item">
-                    <h3 class="edu-title">Bacharelato em Economia</h3>
+                    <h3 class="edu-title">Bacharel em Ciências Econômicas</h3>
                     <p class="edu-meta">Universidade do Estado do Rio de Janeiro (UERJ)</p>
                 </div>
 
@@ -645,6 +683,22 @@
                     <h3 class="edu-title">Extensão: Introdução à Matemática Económica</h3>
                     <p class="edu-meta">Instituto de Matemática Pura e Aplicada (IMPA)</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Artigos -->
+        <section id="artigos" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Artigos e Publicações</h2>
+                
+                <div class="publication-item">
+                    <h3 class="pub-title">Título do Seu Artigo Aqui</h3>
+                    <p class="pub-meta">Nome do Veículo / Data de Publicação</p>
+                    <p class="pub-desc">Breve resumo ou descrição do artigo abordando as metodologias e análises desenvolvidas.</p>
+                    <a href="#" class="pub-link" target="_blank">Ler Artigo Completo &#8594;</a>
+                </div>
+                
+                <!-- Você pode adicionar mais itens de publicação copiando o bloco "publication-item" acima -->
             </div>
         </section>
 
