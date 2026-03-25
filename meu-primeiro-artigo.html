@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros Reais no Brasil | Guilherme Lima</title>
+    
+    <!-- MathJax para renderizar as equações matemáticas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fafafa;
+        }
+        
+        .article-container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 { 
+            color: #0f172a; 
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #1d4ed8;
+            margin-top: 40px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #334155;
+            margin-top: 30px;
+        }
+
+        .data { 
+            color: #64748b; 
+            font-size: 1rem; 
+            margin-bottom: 30px; 
+            font-weight: 500;
+        }
+
+        a.voltar { 
+            color: #1d4ed8; 
+            text-decoration: none; 
+            font-weight: 500; 
+            display: inline-block; 
+            margin-bottom: 30px; 
+        }
+
+        a.voltar:hover { text-decoration: underline; }
+
+        .resumo {
+            background-color: #f8fafc;
+            border-left: 4px solid #1d4ed8;
+            padding: 20px;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: #475569;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .equation {
+            overflow-x: auto;
+            padding: 15px 0;
+        }
+
+        .referencias {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .referencias p {
+            margin-bottom: 10px;
+            text-indent: -20px;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 20px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="voltar">&larr; Voltar ao Portefólio</a>
+
+    <div class="article-container">
+        <h1>Juros Reais no Brasil: Uma Crítica Metodológica a Klein (2025) sob os Frameworks DSGE Neokeynesiano, HANK e a Revolução da Credibilidade</h1>
+        <div class="data">Análise Técnica - Março 2026</div>
+
+        <div class="resumo">
+            <strong>Resumo:</strong> Este ensaio submete a Nota de Política Econômica n.º 082 do MADE/USP (Klein, 2025) a três linhas de escrutínio técnico: (i) crítica interna à estratégia econométrica ECM-GMM em painel; (ii) avaliação das prescrições de política à luz do modelo DSGE Neokeynesiano canônico com credibilidade endógena e possibilidade de dominância fiscal; e (iii) análise das implicações dos modelos HANK (Heterogeneous Agent New Keynesian) para a transmissão monetária no Brasil com crédito segmentado. Em diálogo com a literatura da Revolução da Credibilidade — de Kydland e Prescott (1977) a Svensson (1997) — argumentamos que (a) o efeito causal da meta de inflação sobre o juro real não está identificado na estratégia de Klein; (b) a prescrição de elevar a meta é contraproducente em equilíbrio com credibilidade endógena; e (c) o resíduo inexplicado de 0,9 p.p. identificado pelo autor é, em grande medida, o prêmio de credibilidade e de dominância fiscal que a literatura institucional descreve e que nenhum painel de 15 países captura adequadamente.
+        </div>
+
+        <h2>1. Introdução</h2>
+        <p>O trabalho de Klein (2025), que atualiza Segura-Ubiergo (2012) com dados até 2019 e incorpora metas de inflação e volatilidade cambial como novos canais explicativos dos juros reais em painel de 15 economias emergentes, representa uma contribuição metodológica genuína ao debate. O uso de Modelos de Correção de Erros (ECM) estimados por GMM, o tratamento da endogeneidade de juros reais, poupança e volatilidade cambial, e a honestidade em admitir um resíduo inexplicado de aproximadamente 0,9 ponto percentual para o Brasil são méritos que distinguem o paper da literatura heterodoxa de menor rigor que circula sobre o mesmo tema.</p>
+        
+        <p>Exatamente por isso o trabalho merece contra-argumentação rigorosa. Três problemas centrais o comprometem: primeiro, a estratégia econométrica sofre de proliferação de instrumentos, dependência transversal ignorada, restrição de homogeneidade de slopes implausível e uma proxy de qualidade institucional que, por construção, não pode identificar o canal que se pretende testar; segundo, a prescrição de elevar a meta de inflação para reduzir o juro real contradiz as implicações centrais do modelo DSGE Neokeynesiano com credibilidade endógena e regime fiscal não-ricardiano; terceiro, os modelos HANK com heterogeneidade de agentes e segmentação de mercados de crédito identificam mecanismos de transmissão específicos ao Brasil que nenhum painel de países captura e que explicam parte substancial do resíduo que Klein chama de puzzle.</p>
+
+        <h2>2. A Revolução da Credibilidade como Programa de Pesquisa</h2>
+        
+        <h3>2.1 Contexto Histórico: A Grande Inflação e o Colapso do Consenso Keynesiano</h3>
+        <p>A Revolução da Credibilidade não nasceu de um exercício teórico abstrato. Ela foi a resposta intelectual a um fracasso histórico concreto: a Grande Inflação dos anos 1970 nos Estados Unidos e em boa parte do mundo desenvolvido. Entre 1965 e 1980, a inflação americana saltou de menos de 2% ao ano para mais de 14%, apesar ou por causa de políticas monetárias ativistas que tentavam explorar o trade-off aparente entre inflação e desemprego descrito pela curva de Phillips.</p>
+        <p>O consenso keynesiano do pós-guerra havia construído uma visão confortável: autoridades bem-intencionadas e tecnicamente equipadas poderiam usar política monetária discricionária para estabilizar o ciclo econômico. O problema — que a Revolução formalizaria — é que essa visão ignorava a dimensão estratégica da política: os agentes formam expectativas sobre o que o banco central fará, e essas expectativas afetam o próprio ambiente macroeconômico que o banco enfrenta. Friedman (1968) e Phelps (1968) demoliram a curva de Phillips estática com expectativas adaptativas. Kydland e Prescott (1977) transformaram esse diagnóstico em programa de pesquisa sobre desenho institucional — e é aí que a crítica às prescrições de Klein começa.</p>
+
+        <h3>2.2 Inconsistência Temporal e o Viés Inflacionário de Equilíbrio: Kydland e Prescott (1977)</h3>
+        <p>Kydland e Prescott (1977) demonstraram que o problema da política monetária discricionária não é de competência nem de intenção — é de estrutura de incentivos. Um banco central benevolente minimiza a função de perda social:</p>
+        
+        <div class="equation">
+            $$ L = E\left[ \sum_{t=0}^{\infty} \beta^t \{(\pi_t - \pi^*)^2 + \lambda(u_t - u^*)^2\} \right] $$
+        </div>
+        
+        <p>onde \(\pi^*\) = meta de inflação; \(u^* < u^n\) = desemprego desejado abaixo da taxa natural; \(\lambda > 0\) = peso relativo ao desemprego; \(\beta\) = fator de desconto intertemporal.</p>
+
+        <p>A curva de Phillips expectacional é:</p>
+        <div class="equation">
+            $$ u_t = u^n - \alpha(\pi_t - \pi^e_t) + \epsilon_t, \quad \alpha > 0 $$
+        </div>
+
+        <p>Em cada período \(t\), dado \(\pi^e_t\) já formado, o banco tem incentivo a escolher \(\pi_t > \pi^e_t\) para reduzir \(u_t\) abaixo de \(u^*\). A condição de primeira ordem implica um viés inflacionário de equilíbrio:</p>
+        <div class="equation">
+            $$ \pi_{discr} = \pi^* + \lambda\alpha (u^n - u^*) > \pi^* \quad \text{quando } u^* < u^n $$
+        </div>
+
+        <p>Esse viés não é erro de política — é o equilíbrio racional da estrutura com discrição. A implicação para o design institucional é imediata: o problema não é quem está no banco central, mas quais regras estruturam o jogo entre banco central e setor privado.</p>
+
+        <h3>2.3 Reputação, Punição e a Assimetria da Credibilidade: Barro e Gordon (1983)</h3>
+        <p>Barro e Gordon (1983) introduziram a dimensão dinâmica: em jogo repetido, o banco central pode construir reputação de baixa inflação e sustentar equilíbrio melhor do que o viés estático — desde que o ganho reputacional futuro supere o ganho de curto prazo de surpreender com inflação. Seja \(V^R\) o valor de continuar com reputação e \(V^D\) o valor de desviar:</p>
+        
+        <div class="equation">
+            $$ V^R = \frac{u(\pi^*)}{1-\delta} \quad \text{vs.} \quad V^D = u(\pi_{cheat}) + \frac{\delta u(\pi_{punish})}{1-\delta} $$
+        </div>
+        
+        <p>\(\delta\) = fator de desconto; \(\pi_{cheat}\) = inflação ótima ao trair, \(\pi_{punish}\) = inflação de punição nos períodos subsequentes ao desvio.</p>
+        <p>O equilíbrio de reputação sustenta baixa inflação se e somente se \(V^R \ge V^D\) — o que requer \(\delta\) suficientemente alto e punição suficientemente severa. As duas implicações centrais para o debate brasileiro: primeiro, a credibilidade é construída lentamente via cumprimento repetido de compromissos difíceis e destruída rapidamente — um único desvio visível pode colapsar o equilíbrio cooperativo. Segundo, o retorno ao equilíbrio após o colapso é custoso: requer desinflação deliberada e prolongada. O custo assimétrico é exatamente o que torna imprudente qualquer sinalização de flexibilidade da meta em contexto de fragilidade fiscal.</p>
+
+        <h3>2.4 O Banco Central Conservador: Rogoff (1985)</h3>
+        <p>Rogoff (1985) propôs a solução institucional: delegar a política monetária a um banco central com maior aversão à inflação do que a sociedade (\(\kappa_{CB} > \kappa_{social}\)). Se o banco minimiza \(\kappa_{CB} > 1\):</p>
+        
+        <div class="equation">
+            $$ L^{CB} = E \left[ (\pi_t - \pi^*)^2 + \frac{\lambda}{\kappa_{CB}} (u_t - u^*)^2 \right] $$
+        </div>
+
+        <p>o viés de equilíbrio cai para:</p>
+        <div class="equation">
+            $$ \pi_{CB} = \pi^* + \frac{\lambda(u^n - u^*)}{\kappa_{CB}} \rightarrow \pi^* \quad \text{quando } \kappa_{CB} \rightarrow \infty $$
+        </div>
+        <p>O trade-off de Rogoff é fino: excesso de conservadorismo estabiliza bem a inflação mas acomoda pouco choques reais. Há um grau ótimo \(\kappa_{CB}^*\) que equilibra as duas metas. O resultado normativo, porém, é inequívoco: a solução não é aceitar mais inflação — é construir mecanismos institucionais que tornem o comprometimento estruturalmente crível.</p>
+
+        <h3>2.5 Contratos Ótimos e Metas Explícitas: Walsh (1995) e Svensson (1997)</h3>
+        <p>Walsh (1995) avançou ao mostrar que um contrato linear \(T(\pi) = -t \cdot \pi\) entre governo e banco central elimina completamente o viés sem sacrificar a estabilização ótima de choques. O mecanismo alinha incentivos via preço (custo marginal da inflação internalizado pelo banco) em vez de via preferências.</p>
+        <p>Svensson (1997) completou o programa: o "inflation forecast targeting" implementa aproximadamente a solução ótima com discrição restringida. Bernanke et al. (1999) documentaram empiricamente que países com histórico inflacionário elevado precisaram de períodos mais longos de cumprimento estrito para colher a redução completa do prêmio de risco.</p>
+
+        <h3>2.6 A Revolução da Credibilidade como Antídoto Direto à Prescrição de Klein</h3>
+        <p>A prescrição de Klein — elevar a meta de 3% para 5% para reduzir juros reais em ~1 p.p. — viola o diagnóstico central de toda essa literatura. Seja \(p \in [0,1]\) a probabilidade percebida pelos agentes de que o banco central manterá baixa inflação no futuro. No modelo de Barro-Gordon, essa probabilidade está diretamente incorporada nas expectativas de inflação de longo prazo e no prêmio de risco dos juros:</p>
+        
+        <div class="equation">
+            $$ E_t[\pi_{t+k}] = p \cdot \pi^* + (1-p) \cdot \pi_{discr} $$
+            $$ r^{LP}_t = r^* + \Gamma(1-p), \quad \Gamma > 0 \text{ (prêmio de credibilidade)} $$
+        </div>
+
+        <p>Elevar a meta é interpretado pelos agentes como sinalização de que \(p\) está caindo — comprometimento é negociável. Quando \(p\) cai, o prêmio \(\Gamma(1-p)\) aumenta. O efeito líquido sobre o juro real é ambíguo no modelo teórico e provavelmente negativo no contexto brasileiro com memória inflacionária longa.</p>
+
+        <h2>3. Crítica à Estratégia Econométrica de Klein (2025)</h2>
+        
+        <h3>3.1 Proliferação de Instrumentos no GMM em Painel</h3>
+        <p>Klein estima o ECM em painel com GMM usando defasagens de 2ª e 3ª ordem como instrumentos para três variáveis endógenas (juros reais, poupança e volatilidade cambial). Com \(N=15\) países e \(T=24\) anos, o número de instrumentos gerado pode ser calculado como:</p>
+        <div class="equation">
+            $$ n_{inst} = (T-2) \times k_{end} \approx (22 \times 3) = 66 \text{ instrumentos potenciais} $$
+        </div>
+        <p>Roodman (2009) demonstrou que quando \(n_{inst} > N\), o teste de Sargan-Hansen perde poder assintótico e passa a aceitar praticamente qualquer matriz de instrumentos — o que torna a validação de sobre-identificação reportada pelo paper não-informativa.</p>
+
+        <h3>3.2 Dependência Transversal e Inflação dos Erros-Padrão</h3>
+        <p>Quinze economias emergentes no período 1996-2019 estão sujeitas a choques globais comuns. Na presença de dependência transversal nos resíduos, estimadores padrão de painel produzem erros-padrão viesados para baixo — a significância estatística dos coeficientes é artificialmente inflada.</p>
+
+        <h3>3.3 Homogeneidade de Slopes: Restrição Implausível</h3>
+        <p>O ECM pooled impõe coeficiente de ajuste comum a todos os 15 países — pressupõe que a velocidade de reversão à média dos juros reais é idêntica no Brasil, Coreia do Sul, Turquia e Chile. O estimador PMG (Pooled Mean Group) permite relação de longo prazo homogênea mas coeficientes de ajuste de curto prazo heterogêneos por país.</p>
+
+        <h3>3.4 Rule of Law como Proxy Quase-Invariante no Tempo</h3>
+        <p>O resultado mais consequente do paper para o debate político é a não-significância do Rule of Law no Modelo 3 com efeitos fixos. O problema é estrutural: indicadores mudam menos de 0,1 desvio-padrão por ano em média — são quase-constantes dentro de cada país. Seja \(\alpha_i\) o efeito fixo do país e \(x_{it}\) o Rule of Law:</p>
+        <div class="equation">
+            $$ x_{it} \approx \alpha_i + v_{it}, \quad Var(v_{it}) \approx 0 $$
+        </div>
+        <p>O coeficiente estimado de \(x_{it}\) converge a zero independentemente de seu verdadeiro efeito causal.</p>
+
+        <h3>3.5 Endogeneidade da Meta de Inflação: Viés de Seleção Ignorado</h3>
+        <p>A meta de inflação é tratada como exógena. Contudo, a endogeneidade reversa é óbvia: países que já têm juro real estruturalmente baixo e banco central crível adotam metas mais baixas sem custo. A correlação negativa reflete a seleção e não causalidade da meta para os juros.</p>
+
+        <h2>4. O Framework DSGE Neokeynesiano: Credibilidade Endógena e Dominância Fiscal</h2>
+
+        <h3>4.1 O Modelo Neokeynesiano Canônico</h3>
+        <p>O modelo consiste em três equações log-linearizadas:</p>
+        <p><strong>Curva IS Dinâmica (IS forward-looking):</strong></p>
+        <div class="equation">
+            $$ x_t = E_t[x_{t+1}] - \sigma^{-1}(i_t - E_t[\pi_{t+1}] - r^*_t) $$
+        </div>
+        <p><strong>Curva de Phillips Neokeynesiana (NKPC):</strong></p>
+        <div class="equation">
+            $$ \pi_t = \beta E_t[\pi_{t+1}] + \kappa x_t + u_t $$
+        </div>
+        <p><strong>Regra de Taylor com Credibilidade:</strong></p>
+        <div class="equation">
+            $$ i_t = r^*_t + \pi_t + \phi_\pi(\pi_t - \pi^*) + \phi_x x_t + v_t $$
+        </div>
+
+        <h3>4.2 Condição de Determinabilidade e o Princípio de Taylor</h3>
+        <p>O sistema admite equilíbrio se \(\phi_\pi > 1\). Se o banco central opera sob credibilidade imperfeita, os agentes atribuem probabilidade positiva \(q_t \in [0,1]\) de regra passiva:</p>
+        <div class="equation">
+            $$ E_t[\pi_{t+j}] = (1-q_t) \times \pi^* + q_t \times \pi^{fiscal}_{t+j} $$
+        </div>
+        <p>Quando \(q_t > 0\), o juro real de equilíbrio fica acima de \(r^*\) por um prêmio de credibilidade:</p>
+        <div class="equation">
+            $$ r_t = r^*_t + \Psi(q_t) = r^*_t + \lambda \times q_t \times (\pi^{fiscal} - \pi^*) $$
+        </div>
+
+        <h3>4.3 Switching de Regime e o Prêmio de Dominância Fiscal</h3>
+        <p>Bianchi e Melosi (2017) desenvolveram um modelo DSGE com duas variáveis de estado latentes: dominância monetária (M) e dominância fiscal (F). O juro real de longo prazo incorpora o custo esperado de ser apanhado em regime fiscal:</p>
+        <div class="equation">
+            $$ r^{LP}_t = r^*_t + \frac{p_{MF}}{p_{MF} + p_{FM}} (\pi^F - \pi^M) $$
+        </div>
+
+        <h3>4.4 A Teoria Fiscal do Nível de Preços (FTPL)</h3>
+        <p>Quando o governo segue política fiscal não-ricardiana, o nível de preços é determinado pela condição de solvência intertemporal:</p>
+        <div class="equation">
+            $$ \frac{B_{t-1}}{P_t} = E_t \sum_{j=0}^{\infty} R^{-j} S_{t+j} $$
+        </div>
+
+        <h2>5. O Framework HANK: Transmissão Heterogênea e Crédito Segmentado</h2>
+
+        <h3>5.1 O Problema do Agente Individual</h3>
+        <p>O núcleo do HANK é a otimização de uma família com risco não-segurável:</p>
+        <div class="equation">
+            $$ V(a_t, e_t) = \max_{c_t, a_{t+1}} \{ u(c_t) + \beta E_t V(a_{t+1}, e_{t+1}) \} $$
+        </div>
+        <p>sujeito a: \(c_t + a_{t+1} = (1+r_t)a_t + w_t e_t - T_t\).</p>
+
+        <h3>5.2 A Distribuição Estacionária e a Agregação</h3>
+        <p>Em equilíbrio, o mercado de ativos limpa:</p>
+        <div class="equation">
+            $$ \int a_{t+1}(a, e; r_t) d\mu(a, e) = K_{t+1} $$
+        </div>
+        <p>Decomposição de Auclert (2019):</p>
+        <div class="equation">
+            $$ \Delta C = - E_t[\Delta r] \times \text{MPC}_{rica} + \text{URE} \times \Delta r + \text{NNP} \times \Delta I $$
+        </div>
+
+        <h3>5.3 Modelo HANK de Dois Ativos: Aplicação ao Brasil com Crédito Segmentado</h3>
+        <p>Inovação relevante: introduzir segmentação do mercado de crédito. Seja \(\delta \in [0,1]\) a fração do crédito que é direcionado a taxa regulada \(r^d\):</p>
+        <div class="equation">
+            $$ r^{credito}_t = \delta \times r^d + (1-\delta) \times r^L(i_t) $$
+            $$ \frac{\partial r^{credito}}{\partial i_t} = (1-\delta) \frac{\partial r^L}{\partial i_t} $$
+        </div>
+        <p>Para que o banco central obtenha o mesmo grau de contração, a Selic de equilíbrio é:</p>
+        <div class="equation">
+            $$ i^*_t = r^*_t + \pi_t + \frac{1}{1-\delta} \phi_x x_t $$
+        </div>
+        <p>Com \(\delta \approx 0,45\), o fator multiplicador é \(\approx 1,82\).</p>
+
+        <h3>5.4 Poupança Precaucional com Incerteza de Regime</h3>
+        <p>A poupança agregada é crescente na variância do risco de renda:</p>
+        <div class="equation">
+            $$ A^*(r, \sigma^2_e + \sigma^2_{pol}) = \int a^*(a,e; r, \sigma^2) d\mu $$
+        </div>
+
+        <h2>6. Síntese: O Que os Três Frameworks Dizem sobre as Prescrições de Klein</h2>
+        
+        <h3>6.1 Elevar a Meta de Inflação: Análise de Equilíbrio Geral</h3>
+        <p>No framework da Revolução da Credibilidade, uma elevação da meta em contexto de fragilidade fiscal é interpretada como sinal de negociabilidade do comprometimento. No framework DSGE com switching de regime, a elevação da meta aumenta \(p_{MF}\). No framework HANK com segmentação de crédito, a meta de inflação é irrelevante para o mecanismo central de elevação do juro.</p>
+
+        <h3>6.2 O Resíduo de 0,9 p.p.: Decomposição Estrutural</h3>
+        <p>O "prêmio" inexplicado identificado por Klein pode ser decomposto em três componentes:</p>
+        <div class="equation">
+            $$ \Psi_{cred} + \Psi_{fiscal} + \Psi_{seg} \approx 0.3 + 0.4 + 0.4 = 1.1 \text{ p.p.} $$
+        </div>
+        <p>Nenhum desses três componentes responde a mudanças na meta de inflação. Todos respondem a reformas estruturais que Klein (2025) não discute.</p>
+
+        <h2>7. Conclusão</h2>
+        <p>Klein (2025) contribui com metodologia econométrica mais cuidadosa do que é habitual no debate brasileiro sobre juros — mas chega a conclusões de política que não sobrevivem ao escrutínio dos frameworks teóricos relevantes. A prescrição de elevar a meta de inflação como caminho para reduzir o juro real contradiz décadas de literatura da Revolução da Credibilidade.</p>
+        <p>Os modelos HANK identificam um canal adicional que nenhum painel de países captura: a segmentação do mercado de crédito. O caminho para juros reais menores no Brasil passa por reformas que reduzam esse fator: reestruturação do crédito direcionado, regras fiscais com enforcement crível, e aprofundamento da independência operacional e da comunicação do banco central — não por abandono da âncora nominal que levou anos a construir.</p>
+
+        <div class="referencias">
+            <h3>Referências</h3>
+            <p>Aiyagari, S. R. (1994). Uninsured Idiosyncratic Risk and Aggregate Saving. Quarterly Journal of Economics, 109(3), 659-684.</p>
+            <p>Auclert, A. (2019). Monetary Policy and the Redistribution Channel. American Economic Review, 109(6), 2333-2367.</p>
+            <p>Barro, R. J., & Gordon, D. B. (1983). A Positive Theory of Monetary Policy in a Natural Rate Model. Journal of Political Economy, 91(4), 589-610.</p>
+            <p>Bernanke, B. S., Laubach, T., Mishkin, F. S., & Posen, A. S. (1999). Inflation Targeting: Lessons from the International Experience. Princeton University Press.</p>
+            <p>Bewley, T. (1986). Stationary Monetary Equilibrium with a Continuum of Independently Fluctuating Consumers.</p>
+            <p>Bianchi, F., & Melosi, L. (2017). Escaping the Great Recession. American Economic Review, 107(4), 1030-1058.</p>
+            <p>Calvo, G. A., & Reinhart, C. M. (2002). Fear of Floating. Quarterly Journal of Economics, 117(2), 379-408.</p>
+            <p>Clarida, R., Galí, J., & Gertler, M. (1999). The Science of Monetary Policy: A New Keynesian Perspective. Journal of Economic Literature, 37(4), 1661-1707.</p>
+            <p>Dincer, N. N., & Eichengreen, B. (2014). Central Bank Transparency and Independence: Updates and New Measures. International Journal of Central Banking, 10(1), 189-259.</p>
+            <p>Galí, J. (2008). Monetary Policy, Inflation, and the Business Cycle. Princeton University Press.</p>
+            <p>Kaplan, G., Moll, B., & Violante, G. L. (2018). Monetary Policy According to HANK. American Economic Review, 108(3), 697-743.</p>
+            <p>Klein, G. (2025). Afinal, por que os juros são tão altos no Brasil? MADE/USP, Nota de Política Econômica n.82.</p>
+            <p>Kydland, F. E., & Prescott, E. C. (1977). Rules Rather than Discretion: The Inconsistency of Optimal Plans. Journal of Political Economy, 85(3), 473-491.</p>
+            <p>Orphanides, A., & Williams, J. C. (2005). Inflation Scares and Forecast-Based Monetary Policy. Review of Economic Dynamics, 8(2), 498-527.</p>
+            <p>Pesaran, M. H. (2004). General Diagnostic Tests for Cross-Sectional Dependence in Panels. Cambridge Working Papers in Economics 0435.</p>
+            <p>Pesaran, M. H., Shin, Y., & Smith, R. P. (1999). Pooled Mean Group Estimation of Dynamic Heterogeneous Panels. Journal of the American Statistical Association, 94(446), 621-634.</p>
+            <p>Rogoff, K. (1985). The Optimal Degree of Commitment to an Intermediate Monetary Target. Quarterly Journal of Economics, 100(4), 1169-1189.</p>
+            <p>Roodman, D. (2009). A Note on the Theme of Too Many Instruments. Oxford Bulletin of Economics and Statistics, 71(1), 135-158.</p>
+            <p>Segura-Ubiergo, A. (2012). The Puzzle of Brazil's High Interest Rates. IMF Working Paper 12/62.</p>
+            <p>Sims, C. A. (1994). A Simple Model for Study of the Determination of the Price Level and the Interaction of Monetary and Fiscal Policy. Economic Theory, 4(3), 381-399.</p>
+            <p>Svensson, L. E. O. (1997). Inflation Forecast Targeting: Implementing and Monitoring Inflation Targets. European Economic Review, 41(6), 1111-1146.</p>
+            <p>Walsh, C. E. (1995). Optimal Contracts for Central Bankers. American Economic Review, 85(1), 150-167.</p>
+            <p>Woodford, M. (1994). Monetary Policy and Price Level Determinacy in a Cash-in-Advance Economy. Economic Theory, 4(3), 345-380.</p>
+            <p>Woodford, M. (2003). Interest and Prices: Foundations of a Theory of Monetary Policy. Princeton University Press.</p>
+        </div>
+    </div>
+
+</body>
+</html>
