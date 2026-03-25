@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio Profissional de Guilherme Ferreira Lima - Economista especializado em Finanças Corporativas, Data Science, Governança ESG e Perícia Econômica.">
+    <title>Guilherme Ferreira Lima | Economista | Data Science | ESG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           Variáveis e Reset
+           ========================================================================== */
+        :root {
+            --clr-primary: #0a2540;
+            --clr-accent: #0066cc;
+            --clr-text-main: #1a1f36;
+            --clr-text-muted: #4f566b;
+            --clr-bg-light: #f7f9fc;
+            --clr-white: #ffffff;
+            --clr-border: #e3e8ee;
+            --ff-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --container-width: 1140px;
+            --container-narrow: 760px;
+            --spacer: 1rem;
+            --transition: all 0.3s ease;
+            --shadow-card: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            color: var(--clr-text-main);
+            font-family: var(--ff-main);
+            line-height: 1.6;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--clr-primary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: calc(var(--spacer) * 0.5);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================================================================
+           Utilitários e Componentes Global
+           ========================================================================== */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 calc(var(--spacer) * 1.5);
+        }
+
+        .container-narrow {
+            max-width: var(--container-narrow);
+        }
+
+        .section-padding {
+            padding: calc(var(--spacer) * 5) 0;
+        }
+
+        .bg-light { background-color: var(--clr-bg-light); }
+        .text-muted { color: var(--clr-text-muted); }
+        .text-center { text-align: center; }
+        .border-top { border-top: 1px solid var(--clr-border); }
+        .mb-large { margin-bottom: calc(var(--spacer) * 3); }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--clr-primary);
+            color: var(--clr-white);
+            border: 1px solid var(--clr-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #123456;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--clr-primary);
+            border: 1px solid var(--clr-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(10, 37, 64, 0.05);
+            border-color: var(--clr-primary);
+        }
+
+        /* Títulos de Seção */
+        .section-title {
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: calc(var(--spacer) * 4);
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--clr-accent);
+        }
+
+        .bullet-list {
+            list-style: disc;
+            margin-left: 1.25rem;
+            color: var(--clr-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .card {
+            background: var(--clr-white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--clr-border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-card);
+            border-color: rgba(0, 102, 204, 0.2);
+        }
+
+        .banner-color {
+            background-color: #f0f4f8;
+            color: var(--clr-text-main);
+        }
+
+        /* ==========================================================================
+           Cabeçalho e Navegação
+           ========================================================================== */
+        .main-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--clr-border);
+            backdrop-filter: blur(5px);
+        }
+
+        .main-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo .name {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--clr-primary);
+            line-height: 1;
+        }
+
+        .logo .title {
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .primary-navigation {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .primary-navigation a:not(.btn-cta) {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--clr-text-main);
+        }
+
+        .primary-navigation a:not(.btn-cta):hover {
+            color: var(--clr-accent);
+        }
+
+        .btn-cta {
+            background-color: var(--clr-primary);
+            color: var(--clr-white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--clr-accent);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 9999;
+        }
+
+        /* ==========================================================================
+           Seção Hero
+           ========================================================================== */
+        .hero {
+            padding: calc(var(--spacer) * 10) 0 calc(var(--spacer) * 6) 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-content .lead {
+            font-size: 1.25rem;
+            color: var(--clr-text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* ==========================================================================
+           Seção Sobre
+           ========================================================================== */
+        .sobre-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--clr-text-main);
+        }
+
+        /* ==========================================================================
+           Seção Experiência
+           ========================================================================== */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--clr-border);
+            top: 0;
+            bottom: 0;
+            left: 200px;
+        }
+
+        .timeline-item {
+            padding: 1rem 0 3rem 0;
+            position: relative;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--clr-white);
+            border: 3px solid var(--clr-accent);
+            border-radius: 50%;
+            top: 1.25rem;
+            left: 193px;
+            z-index: 1;
+        }
+
+        .timeline-item.timeline-special::after {
+            border-color: #f39c12;
+        }
+
+        .timeline-info {
+            text-align: right;
+            padding-top: 0.25rem;
+        }
+
+        .timeline-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-info .time {
+            font-size: 0.9rem;
+            color: var(--clr-primary);
+            font-weight: 600;
+        }
+
+        .timeline-info .location {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .timeline-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .timeline-content .date-mobile {
+            display: none;
+            font-weight: 400;
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        .education-snapshot {
+            margin-top: 4rem;
+            border-top: 1px solid var(--clr-border);
+            padding-top: 3rem;
+        }
+
+        .sub-section-title {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .edu-item {
+            background-color: var(--clr-white);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--clr-border);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           Seção Competências
+           ========================================================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--clr-bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background-color: rgba(0, 102, 204, 0.08);
+            color: var(--clr-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tag.tool {
+            background-color: var(--clr-bg-light);
+            border: 1px solid var(--clr-border);
+            color: var(--clr-text-main);
+        }
+
+        .lang-list li {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--clr-bg-light);
+        }
+
+        /* ==========================================================================
+           Seção Publicações
+           ========================================================================== */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .article-item {
+            padding: 1.5rem;
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: var(--clr-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--clr-text-main);
+        }
+
+        .article-item p {
+            color: var(--clr-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--clr-accent);
+        }
+
+        .article-link:hover {
+            color: var(--clr-primary);
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
+           Seção Contato e Rodapé
+           ========================================================================== */
+        .contato .section-title {
+            color: var(--clr-primary);
+        }
+
+        .contato .lead {
+            margin-bottom: 3rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-btn {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-btn:hover {
+            color: var(--clr-accent);
+            transform: scale(1.02);
+        }
+
+        .contact-btn .icon {
+            font-size: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--clr-text-muted);
+        }
+
+        .social-links a:hover {
+            color: #0077b5;
+        }
+
+        .social-links svg {
+            transition: fill 0.3s ease;
+        }
+
+        .social-links a:hover svg {
+            fill: #0077b5;
+        }
+
+        .main-footer {
+            padding: 2rem 0;
+            background-color: var(--clr-white);
+            border-top: 1px solid var(--clr-border);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           Media Queries
+           ========================================================================== */
+        @media (max-width: 992px) {
+            html { font-size: 15px; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .timeline::after { left: 30px; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 60px; }
+            .timeline-item::after { left: 23px; top: 1rem; }
+            .timeline-info { text-align: left; margin-bottom: 0.5rem; }
+            .timeline-content .date-mobile { display: inline; }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: calc(var(--spacer) * 3) 0; }
+            .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; }
+            .mobile-nav-toggle { display: block; }
+
+            .primary-navigation {
+                position: fixed;
+                flex-direction: column;
+                align-items: flex-start;
+                inset: 0 0 0 30%;
+                background-color: var(--clr-white);
+                padding: min(20vh, 8rem) 2rem;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 350ms ease-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .primary-navigation[data-visible="true"] { transform: translateX(0%); }
+            .primary-navigation a { font-size: 1.1rem; width: 100%; display: block; }
+            .btn-cta { text-align: center; margin-top: 1rem; }
+
+            .hamburger { display: block; position: relative; }
+            .hamburger, .hamburger::before, .hamburger::after {
+                background: var(--clr-primary);
+                width: 1.5rem;
+                height: 2px;
+                transition: transform 350ms ease-out, opacity 350ms ease-out;
+            }
+            .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; }
+            .hamburger::before { bottom: 6px; }
+            .hamburger::after { top: 6px; }
+
+            .mobile-nav-toggle[aria-expanded="true"] .hamburger { transform: rotate(45deg); }
+            .mobile-nav-toggle[aria-expanded="true"] .hamburger::before { opacity: 0; }
+            .mobile-nav-toggle[aria-expanded="true"] .hamburger::after { transform: rotate(-90deg) translateX(6px); }
+            
+            .hero-btns { flex-direction: column; gap: 0.75rem; }
+            .hero-content h1 { font-size: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 var(--spacer); }
+            .primary-navigation { inset: 0 0 0 0; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact-btn { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="name">Guilherme Ferreira Lima</span>
+                <span class="title">Economista</span>
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#competencias">Competências</a></li>
+                <li><a href="#publicacoes">Publicações</a></li>
+                <li><a href="#contato" class="btn-cta">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero banner-color">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Economista especializado em Finanças Corporativas, Data Science e Governança ESG</h1>
+                    <p class="subtitle text-muted">Rio de Janeiro, RJ</p>
+                    <p class="lead">Atuação focada na interface entre negócios e tecnologia, com domínio de Python, SQL e BI aplicados à análise de cenários estratégicos, valuation, suporte à alta liderança e perícia econômica.</p>
+                    <div class="hero-btns">
+                        <a href="#contato" class="btn btn-primary">Entrar em Contato</a>
+                        <a href="#experiencia" class="btn btn-secondary">Ver Trajetória</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre section-padding">
+            <div class="container container-narrow">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-text">
+                    <p>Economista formado pela UERJ, com extensão pelo IMPA, possuo sólida expertise em Finanças Corporativas, Data Science, Governança ESG e Perícia Econômica. Minha trajetória é marcada por conectar a visão estratégica de negócios ao poder analítico da tecnologia.</p>
+                    <p>Com forte domínio de ferramentas como Python, SQL e Power BI, atuo na construção de modelagens financeiras complexas (DRE, Valuation), implementação de frameworks de sustentabilidade e elaboração de laudos periciais, sempre focado em guiar decisões de alto nível e avaliar riscos de mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="experiencia section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Experiência Profissional</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-info">
+                            <h3>EY (Ernst & Young)</h3>
+                            <p class="time">Set 2025 - Atual</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Analista de Controle e Gestão <span class="date-mobile">(Fev 2026 - Atual)</span></h4>
+                            <ul class="bullet-list">
+                                <li>Controle financeiro e BI: gestão orçamentária, análise de variações e dashboards de KPIs e margens.</li>
+                                <li>Modelagem técnica: DRE e Valuation com Python e SQL para suporte a auditorias e decisões de investimento.</li>
+                                <li>Análise de dados de mercado, antecipação de riscos/oportunidades e monitoramento de tendências nacionais e internacionais.</li>
+                                <li>Produção de cenários estratégicos, benchmarking e relatórios executivos para alta liderança.</li>
+                                <li>Acompanhamento regulatório e avaliação de impactos tecnológicos no setor; governança via Agile e PMBOK.</li>
+                            </ul>
+                            
+                            <h4>Assistente de Controle e Gestão <span class="date-mobile">(Set 2025 - Fev 2026)</span></h4>
+                            <ul class="bullet-list">
+                                <li>Suporte técnico em auditorias globais, estruturação de frameworks de indicadores e monitoramento de cenários.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-info">
+                            <h3>Consultoria em Perícia Econômica</h3>
+                            <p class="time">Atuação Contínua</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Perito Econômico e Assistente Técnico</h4>
+                            <ul class="bullet-list">
+                                <li>Elaboração de laudos periciais econômico-financeiros para litígios complexos.</li>
+                                <li>Atuação com recálculo de contratos, apuração de haveres e avaliação de empresas (Valuation) em disputas societárias.</li>
+                                <li>Suporte técnico fundamentado em dados (Data Science) para escritórios de advocacia e empresas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-info">
+                            <h3>Startup Six (ESG)</h3>
+                            <p class="time">Nov 2023 - Ago 2025</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Coordenador de Planejamento Financeiro</h4>
+                            <ul class="bullet-list">
+                                <li>Implementação de frameworks de sustentabilidade e governança (GRI, SASB, TCFD).</li>
+                                <li>Gestão integral do ciclo orçamentário (Budget/CAPEX) da startup.</li>
+                                <li>Análise regulatória e alinhamento de métricas financeiras aos padrões ESG.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item timeline-special">
+                        <div class="timeline-info">
+                            <h3>Residência Profissional</h3>
+                            <p class="location">Atlanta, EUA</p>
+                            <p class="time">Jun 2023 - Nov 2023</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Pesquisa e Análise de Mercado</h4>
+                            <ul class="bullet-list">
+                                <li>Pricing e análise global de oferta e demanda no setor automotivo.</li>
+                                <li>Realização de benchmarking competitivo entre players internacionais.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-info">
+                            <h3>Nova Rio – Hospital Bonsucesso</h3>
+                            <p class="time">Nov 2018 - Set 2019</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Assessor da Diretoria</h4>
+                            <ul class="bullet-list">
+                                <li>Suporte estratégico e articulação entre áreas internas e operacionais para suporte direto à alta gestão.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="education-snapshot container-narrow">
+                    <h3 class="sub-section-title">Formação Acadêmica</h3>
+                    <div class="edu-item">
+                        <strong>Bacharelado em Ciências Econômicas</strong> - UERJ (2023)
+                    </div>
+                    <div class="edu-item">
+                        <strong>Matemática Econômica e Análise na Reta</strong> - IMPA (2021)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencias" class="competencias section-padding">
+            <div class="container">
+                <h2 class="section-title">Skillset Técnico</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Finanças & Controle</h3>
+                        <div class="tag-container">
+                            <span class="tag">Orçamento & Forecast</span>
+                            <span class="tag">Valuation</span>
+                            <span class="tag">DRE & KPIs</span>
+                            <span class="tag">Governança Corporativa</span>
+                            <span class="tag">Perícia Econômica</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tecnologia & Dados</h3>
+                        <div class="tag-container">
+                            <span class="tag tool">Python (Pandas/Sklearn)</span>
+                            <span class="tag tool">SQL</span>
+                            <span class="tag tool">Power BI</span>
+                            <span class="tag tool">Excel Avançado</span>
+                            <span class="tag tool">IA Generativa</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Inteligência Estratégica</h3>
+                        <div class="tag-container">
+                            <span class="tag">Análise de Cenários</span>
+                            <span class="tag">Benchmarking</span>
+                            <span class="tag">Movimentos Regulatórios</span>
+                            <span class="tag">Frameworks ESG (GRI/SASB)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Idiomas</h3>
+                        <ul class="lang-list">
+                            <li><strong>Inglês:</strong> Fluente</li>
+                            <li><strong>Italiano:</strong> Avançado</li>
+                            <li><strong>Espanhol:</strong> Avançado</li>
+                            <li><strong>Mandarim:</strong> Iniciante</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publicacoes" class="publicacoes section-padding bg-light border-top">
+            <div class="container container-narrow">
+                <h2 class="section-title">Artigos e Publicações</h2>
+                <p class="text-center text-muted mb-large">Espaço dedicado à divulgação de análises econômicas, estudos em Data Science e artigos sobre Governança ESG.</p>
+                
+                <div class="articles-list">
+                    <article class="article-item card">
+                        <div class="card-content">
+                            <span class="article-date">15 Mai 2026</span>
+                            <h3>Impacto da Automação e Data Science na Precisão de Valuation e DRE</h3>
+                            <p>Análise de como a integração de modelos estatísticos via Python (Sklearn) otimiza o controle financeiro.</p>
+                            <a href="#" class="article-link">Ler Artigo &#8594;</a> 
+                        </div>
+                    </article>
+
+                    <article class="article-item card">
+                        <div class="card-content">
+                            <span class="article-date">10 Abr 2026</span>
+                            <h3>KPIs de ESG para Empresas: Alinhando Frameworks GRI e TCFD à Performance Financeira</h3>
+                            <p>Discussão sobre a estruturação de métricas que unem sustentabilidade corporativa e viabilidade econômica.</p>
+                            <a href="#" class="article-link">Visualizar PDF &#8594;</a> 
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato section-padding banner-color">
+            <div class="container container-narrow text-center">
+                <h2 class="section-title">Vamos Conversar?</h2>
+                <p class="lead">Estou disponível para oportunidades profissionais nas áreas de Finanças Corporativas, Data Science e Governança ESG, bem como para elaboração de laudos de Perícia Econômica.</p>
+                
+                <div class="contact-methods">
+                    <a href="mailto:g.f.lima21@gmail.com" class="contact-btn">
+                        <span class="icon">&#9993;</span> g.f.lima21@gmail.com
+                    </a>
+                    <a href="tel:+5521991979706" class="contact-btn">
+                        <span class="icon">&#128222;</span> (21) 99197-9706
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/guilherme-1-943189142/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer text-center">
+        <div class="container">
+            <p>&copy; 2026 Guilherme Lima. Todos os direitos reservados.</p>
+            <p class="text-muted" style="font-size: 0.8rem;">Rio de Janeiro - Brasil</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.mobile-nav-toggle');
+            const primaryNav = document.querySelector('.primary-navigation');
+
+            if (navToggle && primaryNav) {
+                navToggle.addEventListener('click', () => {
+                    const visibility = primaryNav.getAttribute('data-visible');
+
+                    if (visibility === "false") {
+                        primaryNav.setAttribute('data-visible', true);
+                        navToggle.setAttribute('aria-expanded', true);
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        primaryNav.setAttribute('data-visible', false);
+                        navToggle.setAttribute('aria-expanded', false);
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                const navLinks = primaryNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (primaryNav.getAttribute('data-visible') === "true") {
+                            primaryNav.setAttribute('data-visible', false);
+                            navToggle.setAttribute('aria-expanded', false);
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                });
+            }
+
+            const headerHeight = document.querySelector('.main-header').offsetHeight;
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === "#" || href === "") return;
+
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = targetPosition - headerHeight - 10;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('section[id]');
+            
+            function highlightNavLink() {
+                const scrollY = window.pageYOffset;
+                
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - headerHeight - 50; 
+                    const sectionId = current.getAttribute('id');
+                    const navLink = document.querySelector(`.primary-navigation a[href*=${sectionId}]`);
+                    
+                    if (navLink && !navLink.classList.contains('btn-cta')) {
+                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                            navLink.style.color = 'var(--clr-accent)';
+                            navLink.style.fontWeight = '600';
+                        } else {
+                            navLink.style.color = ''; 
+                            navLink.style.fontWeight = '';
+                        }
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavLink);
+            highlightNavLink(); 
+        });
+    </script>
+</body>
+</html>
